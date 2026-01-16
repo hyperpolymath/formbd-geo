@@ -176,7 +176,7 @@ async fn bbox_handler(
             }
         }),
         results: results_to_entries(&results, state.formbd_client.base_url()),
-        index_timestamp: stats.last_rebuild.map(|t| t.to_rfc3339()),
+        index_timestamp: stats.last_rebuild.map(|t: chrono::DateTime<chrono::Utc>| t.to_rfc3339()),
         total_indexed: stats.entry_count,
     })
 }
@@ -201,7 +201,7 @@ async fn radius_handler(
             "radius_km": radius_km
         }),
         results: results_to_entries(&results, state.formbd_client.base_url()),
-        index_timestamp: stats.last_rebuild.map(|t| t.to_rfc3339()),
+        index_timestamp: stats.last_rebuild.map(|t: chrono::DateTime<chrono::Utc>| t.to_rfc3339()),
         total_indexed: stats.entry_count,
     })
 }
@@ -220,7 +220,7 @@ async fn nearest_handler(
             "k": params.k
         }),
         results: results_to_entries(&results, state.formbd_client.base_url()),
-        index_timestamp: stats.last_rebuild.map(|t| t.to_rfc3339()),
+        index_timestamp: stats.last_rebuild.map(|t: chrono::DateTime<chrono::Utc>| t.to_rfc3339()),
         total_indexed: stats.entry_count,
     })
 }
@@ -272,7 +272,7 @@ async fn stats_handler(State(state): State<Arc<AppState>>) -> Json<StatsResponse
 
     Json(StatsResponse {
         entry_count: stats.entry_count,
-        last_rebuild: stats.last_rebuild.map(|t| t.to_rfc3339()),
+        last_rebuild: stats.last_rebuild.map(|t: chrono::DateTime<chrono::Utc>| t.to_rfc3339()),
     })
 }
 

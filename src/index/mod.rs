@@ -8,7 +8,7 @@ mod rtree;
 
 pub use rtree::SpatialIndex;
 
-use geo::{coord, Point};
+use geo::Point;
 use serde::{Deserialize, Serialize};
 
 /// A spatial entry linking a location to a FormBD document
