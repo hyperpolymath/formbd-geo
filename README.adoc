@@ -7,7 +7,7 @@
 :icons: font
 
 image:https://img.shields.io/badge/Stage-Development-orange.svg[Stage]
-image:https://img.shields.io/badge/License-AGPL--3.0-blue.svg[License]
+image:https://img.shields.io/badge/License-PMPL--1.0-blue.svg[License: PMPL-1.0,link="https://github.com/hyperpolymath/palimpsest-license"]
 
 [.lead]
 *Geospatial extension for FormBD - spatial indexing without compromising auditability.*
